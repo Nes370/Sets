@@ -52,7 +52,7 @@ public class SetElement implements Element {
 		boolean anyAdded = false;
 		
 		for(Element e : S.getSet()) {
-			anyAdded = anyAdded || this.add(e);
+			anyAdded = this.add(e) || anyAdded;
 		}
 		
 		return anyAdded;
@@ -78,7 +78,7 @@ public class SetElement implements Element {
 		boolean anyRemoved = false;
 		
 		for(Element e : S.getSet()) {
-			anyRemoved = anyRemoved || this.remove(e);
+			anyRemoved = this.remove(e) || anyRemoved;
 		}
 		
 		return anyRemoved;
